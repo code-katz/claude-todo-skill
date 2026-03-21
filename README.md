@@ -71,8 +71,8 @@ Restart Claude Code and `/todo` is ready to go in any project.
 
 ## Part of the claude-skills family
 
-- **[claude-devlog-skill](https://github.com/d6veteran/claude-devlog-skill)** — structured changelog for architectural decisions
-- **[claude-roadmap-skill](https://github.com/d6veteran/claude-roadmap-skill)** — living product roadmap with revision history
+- **[claude-devlog-skill](https://github.com/code-katz/claude-devlog-skill)** — structured changelog for architectural decisions
+- **[claude-roadmap-skill](https://github.com/code-katz/claude-roadmap-skill)** — living product roadmap with revision history
 - **claude-todo-skill** ← you are here — lightweight scratchpad for everything else
 
 ---
