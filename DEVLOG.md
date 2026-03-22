@@ -1,7 +1,7 @@
 # claude-todo-skill — Development Log
 
 A living record of architectural decisions, milestones, key insights, and strategic direction.
-Auto-maintained via [claude-devlog-skill](https://github.com/d6veteran/claude-devlog-skill). Entries are reverse-chronological.
+Auto-maintained via [claude-devlog-skill](https://github.com/code-katz/claude-devlog-skill). Entries are reverse-chronological.
 
 ---
 
