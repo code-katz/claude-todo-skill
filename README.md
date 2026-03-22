@@ -1,29 +1,46 @@
+<p align="center">
+  <img src="publish/claude-todo-skill-header.svg" alt="claude-todo-skill" width="100%">
+</p>
+
 # claude-todo-skill
 
-**Ever lose track of that great idea you had mid-conversation?**
+> Capture ideas without leaving Claude Code.
 
-You're deep in a Claude session, something clicks — *"oh, I should add dark mode"* or *"need to write tests for that auth flow"* — and you think, I'll remember that. You won't. It's gone by the next session.
-
-That's what this is for.
+![License](https://img.shields.io/badge/license-MIT-blue) ![Works with Claude Code](https://img.shields.io/badge/works%20with-Claude%20Code-8A2BE2) ![Skill](https://img.shields.io/badge/type-skill-orange)
 
 ---
 
-## What it does
+## The Problem
 
-`claude-todo-skill` gives you a `/todo` command inside Claude Code. Say it, type the idea, done. Claude drops it into a `TODOS.md` file right in your project. No context switching, no app to open, no friction.
+You're deep in a Claude session, something clicks — "oh, I should add dark mode" or "need to write tests for that auth flow" — and you think, I'll remember that. You won't. It's gone by the next session.
 
-When you're ready to do a brain dump review, `/todos review` walks you through each open item one by one — done, skip, or jot a quick update. Claude keeps the list tidy.
+You could switch to a notes app, open an issue tracker, or drop it in a Slack message to yourself. But you're mid-thought, mid-flow, and any context switch costs you momentum.
 
-```
-/todo write unit tests for the auth module
-→ Added ✓
+---
 
-/todo look into dark mode toggle
-→ Added ✓
+## Who This Is For
 
-/todos review
-→ "write unit tests for the auth module" — Done, skip, or add an update?
-```
+Developers who think of things mid-session and lose them by the next one. This is the lightest tool in the Code Katz suite — no structure, no categories, no overhead. Just a flat list of things you don't want to forget.
+
+---
+
+## See the Difference
+
+You just realized something needs to happen, but you're in the middle of something else.
+
+**Without the todo skill:**
+
+> **You:** Oh wait, I also need to write tests for that auth module. Let me open a note somewhere...
+>
+> *(switches to Notes app, writes it down, switches back, loses train of thought)*
+
+**With the todo skill:**
+
+> **You:** /todo write unit tests for the auth module
+>
+> **Claude:** Added. You now have 3 open items. Back to what we were doing — you were asking about the refresh token rotation.
+
+No context switch. No app to open. The idea is captured and you're still in flow.
 
 ---
 
@@ -58,25 +75,48 @@ Flat list. No categories. No due dates. No overhead. Completed items stay right 
 
 ## Installation
 
-Drop `SKILL.md` into your Claude Code skills directory:
+This skill is for [Claude Code](https://claude.ai/code). Install it once and it's available across all your projects:
 
 ```bash
 mkdir -p ~/.claude/skills/todo
-cp SKILL.md ~/.claude/skills/todo/SKILL.md
+curl -o ~/.claude/skills/todo/SKILL.md \
+  https://raw.githubusercontent.com/code-katz/claude-todo-skill/main/SKILL.md
 ```
-
-Restart Claude Code and `/todo` is ready to go in any project.
 
 ---
 
-## Part of the claude-skills family
+## Usage
 
-- **[claude-devlog-skill](https://github.com/code-katz/claude-devlog-skill)** — structured changelog for architectural decisions
-- **[claude-roadmap-skill](https://github.com/code-katz/claude-roadmap-skill)** — living product roadmap with revision history
-- **claude-todo-skill** ← you are here — lightweight scratchpad for everything else
+Once installed, the skill activates automatically in Claude Code. You can:
+
+- **Quick capture** — type `/todo` followed by the idea
+- **Brain dump review** — type `/todos review` to walk through open items one by one
+- **Check status** — type `/todos` to see what's still open
+
+---
+
+## Works Well With
+
+| Project | What it does |
+|---|---|
+| [claude-team-cli](https://github.com/code-katz/claude-team-cli) | Ten specialist personas for Claude Code — capture action items from any specialist session |
+| [claude-devlog-skill](https://github.com/code-katz/claude-devlog-skill) | Structured development changelog — the devlog captures decisions, the todo list captures everything else |
+| [claude-roadmap-skill](https://github.com/code-katz/claude-roadmap-skill) | Living product roadmap — strategic priorities live in the roadmap, tactical tasks live here |
+| [claude-plans-skill](https://github.com/code-katz/claude-plans-skill) | Archives finalized implementation plans — plans capture the approach, todos capture the loose threads |
+| [claude-publish-agent](https://github.com/code-katz/claude-publish-agent) | Publish markdown to blogging platforms — write about what you've built and ship it from the terminal |
+
+---
+
+## Repository Contents
+
+| File | Purpose |
+|---|---|
+| `SKILL.md` | The skill source file — Claude's instructions for how todo capture works |
+| `DEVLOG.md` | Development log for this project |
+| `README.md` | This file |
 
 ---
 
 ## License
 
-MIT
+See [LICENSE](LICENSE) for details.
