@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="publish/images/claude-todo-skill-header.svg" alt="claude-todo-skill" width="100%">
+  <img src="publish/images/Todo_dark_banner.png" alt="claude-todo-skill" width="100%">
 </p>
 
 # claude-todo-skill
