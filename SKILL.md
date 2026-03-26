@@ -31,17 +31,36 @@ TODOS.md lives in the **project root** — the same place as DEVLOG.md and ROADM
 # TODOS
 <!-- project: <project-name> -->
 
-- [ ] idea or task description
-- [ ] another idea
-  - Update 2026-03-20: partial progress note here
+## <Section Name>
+
+### Completed
 - [x] completed thing
+
+### Ready — Can Run in Parallel
+- [ ] task description → **Persona** | context or output note
+- [ ] another task → **Persona A + Persona B** | dependency note
+  - Update 2026-03-20: partial progress note here
+
+### Blocked Chain (sequential — each depends on the previous)
+1. [ ] first thing → **Persona** | blocker description
+2. [ ] next thing → **Persona** | blocked: needs #1
+3. [ ] third thing → **Persona** | blocked: needs #2
+
+### Deferred
+- [ ] future task → **Persona** | reason for deferral
 ```
 
 **Rules:**
-- Single flat list — no sections, no categories
-- Open items: `- [ ] text`
-- Completed items: `- [x] text` — stay inline, never moved to a separate section
+- Organize by domain sections (e.g., "Product & Engineering", "Business Operations")
+- Within each section, group items by execution state:
+  - **Completed** — done items (`- [x]`)
+  - **Ready — Can Run in Parallel** — unblocked items that can execute concurrently
+  - **Blocked Chain** — sequential items where each depends on the previous (use numbered list `1. [ ]`)
+  - **Deferred** — items intentionally postponed with a reason
+- Every open item must include a **persona tag** after `→`: the team member best suited to lead it (e.g., `→ **Akira**`, `→ **River + Akira**`, `→ **Sage** + attorney`)
+- After the persona tag, add `|` followed by a brief context note: dependency, output, or blocker description
 - Progress notes: indented sub-bullets with a date prefix: `  - Update YYYY-MM-DD: note`
+- When adding a new item, ask: "Who should lead this, and can it run in parallel with current work?" if the user doesn't specify
 - File is created on first use with the header above
 
 ---
@@ -62,9 +81,12 @@ This skill activates when the user says:
 ### `/todo <text>` — Add an item
 
 1. Read TODOS.md (create it if it doesn't exist)
-2. Append `- [ ] <text>` to the end of the list
-3. Write the file
-4. Confirm: "Added: `<text>`"
+2. Determine the right section and group for the item:
+   - If the user specifies a persona, use it. If not, ask: "Who should lead this?" (suggest based on the item's domain)
+   - If the user specifies parallel/blocked status, use it. If not, infer: items with no dependencies go to "Ready — Can Run in Parallel"
+3. Append the item in the correct group with persona tag and context note
+4. Write the file
+5. Confirm: "Added: `<text>` → **Persona** (Ready — parallel)" or similar
 
 If called with no args (`/todo`), ask: "What's the todo?" then proceed with their answer.
 
@@ -74,7 +96,10 @@ If called with no args (`/todo`), ask: "What's the todo?" then proceed with thei
 # TODOS
 <!-- project: <project-name> -->
 
-- [ ] <first item>
+## General
+
+### Ready — Can Run in Parallel
+- [ ] <first item> → **Persona** | context
 ```
 
 Replace `<project-name>` with the project name established during session setup.
@@ -145,7 +170,10 @@ When the user asks "what are my todos?" or "show my todos" outside of a formal `
 ## Style Guidelines
 
 - Keep item text short and imperative: "write unit tests for auth" not "I need to remember to maybe write some unit tests for the authentication module"
-- Do not reformat or clean up existing items when adding new ones
-- Do not reorder items — preserve the order the user added them
+- Always include a persona tag (`→ **Persona**`) on open items — this is required, not optional
+- Always include a context note after `|` — dependency, output description, or blocker
+- When marking an item done, move it to the "Completed" group in its section
+- When an item becomes unblocked (its dependency is resolved), move it from "Blocked Chain" to "Ready — Can Run in Parallel"
+- Do not reorder items within a group — preserve the order the user added them
 - Never delete items — mark done with `[x]` or leave with `[ ]`; only the user can ask you to remove something explicitly
-- Do not add metadata (dates, priorities, tags) to items unless the user includes them in their text
+- When the user adds an item without specifying a persona, suggest one based on the item's domain (engineering → Akira, product → River, marketing → Toni, business/legal/finance → Sage, testing → Robin, frontend → Sasha, devops → Alex, security → Morgan, data → Jordan/Casey, project management → Quinn)
