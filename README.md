@@ -92,6 +92,7 @@ Once installed, the skill activates automatically in Claude Code. You can:
 - **Quick capture** — type `/todo` followed by the idea
 - **Brain dump review** — type `/todos review` to walk through open items one by one
 - **Check status** — type `/todos` to see what's still open
+- **Lint check** — on first use per session, verifies your project has a linter configured and flags if missing
 
 ---
 

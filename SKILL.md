@@ -23,6 +23,19 @@ The first time this skill triggers in a session, establish the project context b
 
 TODOS.md lives in the **project root** — the same place as DEVLOG.md and ROADMAP.md.
 
+### Lint Check
+
+When establishing project context for the first time in a session, verify that the project has a linter configured. Check for stack-appropriate lint configuration files:
+
+- **Python**: `ruff.toml`, `pyproject.toml` with `[tool.ruff]`, `.flake8`
+- **JavaScript/TypeScript**: `.eslintrc*`, `eslint.config.*`, `biome.json`, or a `lint` script in `package.json`
+- **Swift/iOS**: `.swiftlint.yml`
+- **Go**: `.golangci.yml`
+- **Rust**: `clippy` configuration in `Cargo.toml`
+- **General**: `.pre-commit-config.yaml`
+
+If no linter is configured, flag it to the user before proceeding. Recommend: Ruff for Python, ESLint or Biome for JS/TS, SwiftLint for Swift, golangci-lint for Go, clippy for Rust. Frame it as a prerequisite, not an afterthought.
+
 ---
 
 ## TODOS.md Format
