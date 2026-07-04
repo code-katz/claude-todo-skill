@@ -75,12 +75,21 @@ Flat list. No categories. No due dates. No overhead. Completed items stay right 
 
 ## Installation
 
-This skill is for [Claude Code](https://claude.ai/code). Install it once and it's available across all your projects:
+This skill is for [Claude Code](https://claude.ai/code). Install it once and it's available across all your projects.
+
+### As a plugin (recommended)
+
+```
+/plugin marketplace add code-katz/claude-plugins
+/plugin install claude-todo@code-katz
+```
+
+### Manual install
 
 ```bash
 mkdir -p ~/.claude/skills/todo
 curl -o ~/.claude/skills/todo/SKILL.md \
-  https://raw.githubusercontent.com/code-katz/claude-todo-skill/main/SKILL.md
+  https://raw.githubusercontent.com/code-katz/claude-todo-skill/main/skills/todo/SKILL.md
 ```
 
 ---

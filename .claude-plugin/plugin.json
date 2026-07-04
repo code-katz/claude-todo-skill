@@ -1,0 +1,6 @@
+{
+  "name": "claude-todo",
+  "description": "Per-project TODOS.md scratchpad: two-second capture for ideas and loose tasks that must survive the session, with persona routing and parallel/blocked grouping.",
+  "version": "0.2.0",
+  "author": { "name": "Code Katz" }
+}
